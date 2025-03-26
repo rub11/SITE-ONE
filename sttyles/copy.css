@@ -1,0 +1,124 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0d0d0d; /* Fundo preto para um visual sofisticado */
+    color: #fff; /* Cor do texto */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+}
+
+h1 {
+    font-size: 3em;
+    color: #ffd700; /* Dourado para um toque de luxo */
+    margin: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 2em;
+    color: #c0a000;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Container de Conteúdo */
+.content {
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+    margin: 30px 0;
+}
+
+.content img, .content video {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 15px;
+    border: 2px solid #ffd700;
+}
+
+/* Seção de Testemunhos */
+.testemunhos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.testemunho-item {
+    width: 90%;
+    max-width: 600px;
+    margin: 15px 0;
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    text-align: center;
+    border: 1px solid #ffd700;
+}
+
+.testemunho-item img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #ffd700;
+}
+
+/* Botão Chamativo */
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #ffcc00, #ff9900);
+    color: #0d0d0d;
+    font-size: 1.5em;
+    padding: 15px 40px;
+    text-decoration: none;
+    margin-top: 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s;
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.4);
+}
+
+.cta-button:hover {
+    background: linear-gradient(135deg, #ff9900, #ff6600);
+    transform: scale(1.05);
+}
+
+/* Rodapé */
+footer {
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    padding: 20px;
+    text-align: center;
+    color: #ffd700;
+    width: 100%;
+    box-shadow: 0 -4px 10px rgba(255, 215, 0, 0.3);
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+}
