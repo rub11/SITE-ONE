@@ -27,6 +27,14 @@
       text-transform: uppercase;
     }
 
+    #contador {
+      background: #b8860b;
+      color: #000;
+      padding: 15px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
     .banner {
       background: url('imagens/luxo.jpg') no-repeat center center/cover;
       padding: 80px 20px;
@@ -114,7 +122,6 @@
       font-size: 16px;
     }
 
-    /* Tela cheia mobile */
     #fullscreen-viewer {
       display: none;
       position: fixed;
@@ -156,11 +163,9 @@
       header {
         font-size: 22px;
       }
-
       .banner {
         font-size: 24px;
       }
-
       .swiper-slide p {
         font-size: 16px;
       }
@@ -169,6 +174,8 @@
 </head>
 <body>
   <header>Oportunidade de Luxo - Poucas Vagas!</header>
+
+  <div id="contador">Promoção termina em: <span id="timer"></span></div>
 
   <div class="banner">
     VOCÊ MERECE O MELHOR. <br />
@@ -182,46 +189,7 @@
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <!-- Slides com depoimentos -->
-        <div class="swiper-slide">
-          <img src="imagens/1.png" alt="Depoimento 1" />
-          <p>"Este curso mudou minha vida! 💎"</p>
-        </div>
-        <div class="swiper-slide">
-          <img src="imagens/2.png" alt="Depoimento 2" />
-          <p>"Nunca me senti tão confiante!"</p>
-        </div>
-        <div class="swiper-slide">
-          <img src="imagens/3.png" alt="Depoimento 3" />
-          <p>"O segredo do sucesso está aqui!"</p>
-        </div>
-        <div class="swiper-slide">
-          <img src="imagens/4.png" alt="Depoimento 4" />
-          <p>"A decisão mais inteligente que tomei!"</p>
-        </div>
-        <div class="swiper-slide">
-          <img src="imagens/5.png" alt="Depoimento 5" />
-          <p>"Tudo o que eu precisava para crescer!"</p>
-        </div>
-        <div class="swiper-slide">
-          <img src="imagens/6.png" alt="Depoimento 6" />
-          <p>"O melhor investimento da minha vida!"</p>
-        </div>
-        <div class="swiper-slide">
-          <img src="imagens/7.png" alt="Depoimento 7" />
-          <p>"Resultados além do esperado!"</p>
-        </div>
-        <div class="swiper-slide">
-          <img src="imagens/8.png" alt="Depoimento 8" />
-          <p>"Se você quer mudar de vida, faça isso!"</p>
-        </div>
-        <div class="swiper-slide">
-          <img src="imagens/9.png" alt="Depoimento 9" />
-          <p>"Sucesso garantido para quem acredita!"</p>
-        </div>
-        <div class="swiper-slide">
-          <img src="imagens/10.png" alt="Depoimento 10" />
-          <p>"Aprendi com os melhores!"</p>
-        </div>
+        <!-- ... (mantenha seus slides atuais aqui) -->
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
@@ -229,15 +197,23 @@
     </div>
   </div>
 
-  <div class="luxury-text">
-    SEU MOMENTO É AGORA. <br />
-    EXCLUSIVIDADE PARA QUEM QUER VENCER!
-  </div>
+  <div class="luxury-text">SEU MOMENTO É AGORA. <br />EXCLUSIVIDADE PARA QUEM QUER VENCER!</div>
   <a href="https://pay.kiwify.com.br/ajzDyVH" class="cta-button">RESERVE SUA VAGA</a>
+
+  <!-- Benefícios Visuais -->
+  <!-- ... (adicione os cards com ícones e textos aqui, conforme sugerido) -->
+
+  <!-- Garantia -->
+  <!-- ... (adicione a seção de garantia aqui) -->
+
+  <!-- Antes e Depois -->
+  <!-- ... (adicione a seção com transformação visual aqui) -->
+
+  <!-- FAQ -->
+  <!-- ... (adicione a seção de perguntas frequentes aqui) -->
 
   <footer class="footer">&copy; 2025 DEV RUBY - Todos os direitos reservados.</footer>
 
-  <!-- Modal fullscreen -->
   <div id="fullscreen-viewer">
     <img id="fullscreen-img" src="" alt="Imagem em tela cheia" />
     <button id="close-btn">Fechar</button>
@@ -264,24 +240,40 @@
       grabCursor: true,
     });
 
-    // Fullscreen personalizado para mobile
-    const fullscreenViewer = document.getElementById('fullscreen-viewer');
-    const fullscreenImg = document.getElementById('fullscreen-img');
-    const closeBtn = document.getElementById('close-btn');
-
     document.querySelectorAll('.swiper-slide img').forEach((img) => {
       img.addEventListener('click', () => {
         if (window.innerWidth <= 600) {
-          fullscreenImg.src = img.src;
-          fullscreenViewer.style.display = 'flex';
+          document.getElementById('fullscreen-img').src = img.src;
+          document.getElementById('fullscreen-viewer').style.display = 'flex';
         }
       });
     });
 
-    closeBtn.addEventListener('click', () => {
-      fullscreenViewer.style.display = 'none';
-      fullscreenImg.src = '';
+    document.getElementById('close-btn').addEventListener('click', () => {
+      document.getElementById('fullscreen-viewer').style.display = 'none';
+      document.getElementById('fullscreen-img').src = '';
     });
+
+    const countdown = () => {
+      const finalDate = new Date();
+      finalDate.setHours(finalDate.getHours() + 3);
+      const timer = document.getElementById("timer");
+      const update = () => {
+        const now = new Date().getTime();
+        const distance = finalDate - now;
+        if (distance < 0) {
+          timer.innerHTML = "Encerrado";
+          return;
+        }
+        const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((distance % (1000 * 60)) / 1000);
+        timer.innerHTML = `${h}h ${m}m ${s}s`;
+      };
+      update();
+      setInterval(update, 1000);
+    };
+    countdown();
   </script>
 </body>
 </html>
