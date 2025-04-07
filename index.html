@@ -1,95 +1,258 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Exclusiva</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="responsive/responsive-01.css">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #121212;
-            color: #ffffff;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        h2 {
-            font-size: 24px;
-            margin-top: 20px;
-        }
-        .video-container {
-            max-width: 80%;
-            margin: 20px auto;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-        }
-        video {
-            width: 100%;
-            border-radius: 10px;
-        }
-        #conteudo {
-            display: none;
-            margin-top: 30px;
-            padding: 20px;
-            background: #1e1e1e;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-        }
-        .LINK-2 {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 12px 25px;
-            background: #ff8800;
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
-        .LINK-2:hover {
-            background: #e67600;
-        }
-        .creditos {
-            display: none;
-            margin-top: 40px;
-            padding: 10px;
-            background: #181818;
-            font-size: 14px;
-            border-radius: 10px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Premium - Guia Dev 2025</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #121212;
+      --bg-card: #1e1e1e;
+      --orange: #ff8800;
+      --orange-hover: #e67600;
+      --text-color: #ffffff;
+      --text-muted: #aaaaaa;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-color);
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--orange), #ff5500);
+      color: white;
+      padding: 40px 20px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    }
+
+    header h1 {
+      font-size: 32px;
+      text-transform: uppercase;
+    }
+
+    header h2 {
+      font-size: 20px;
+      font-weight: 400;
+      margin-top: 10px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      background: var(--bg-card);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+    }
+
+    h2, h3 {
+      color: var(--orange);
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+    }
+
+    ul li::before {
+      content: "✅ ";
+      color: var(--orange);
+    }
+
+    ul li {
+      font-size: 16px;
+      margin: 8px 0;
+    }
+
+    .call-to-action, .cta-button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 15px 30px;
+      background: var(--orange);
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .call-to-action:hover,
+    .cta-button:hover {
+      background: var(--orange-hover);
+      transform: scale(1.05);
+    }
+
+    .creditos {
+      margin-top: 50px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .content {
+      padding: 40px 0;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .content p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+      color: var(--text-color);
+    }
+
+    .testemunhos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .testemunho-item {
+      background: var(--bg-card);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s;
+    }
+
+    .testemunho-item:hover {
+      transform: scale(1.03);
+    }
+
+    .testemunho-item img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .testemunho-item p {
+      color: var(--text-muted);
+      font-size: 16px;
+    }
+
+    h3 {
+      font-size: 22px;
+      color: var(--orange);
+      margin: 40px 0 20px;
+    }
+
+    video {
+      width: 100%;
+      max-width: 600px;
+      margin: 20px auto;
+      display: block;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.08);
+    }
+
+    footer {
+      background-color: #181818;
+      color: var(--text-muted);
+      padding: 20px;
+      font-size: 14px;
+      margin-top: 50px;
+      border-top: 1px solid #333;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 26px;
+      }
+      header h2 {
+        font-size: 18px;
+      }
+      .cta-button, .call-to-action {
+        font-size: 18px;
+        padding: 12px 25px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <h2>🎬 Assista ao vídeo antes de acessar o conteúdo! 🎬</h2>
-    <div class="video-container" id="videoContainer">
-        <video id="meuVideo" autoplay controls controlsList="nodownload" disableRemotePlayback>
-            <source src="videos/20250321-113552-mndewlhh-o6u6n5g3_YX5KCPpe.mp4" type="video/mp4">
-            Seu navegador não suporta vídeos.
-        </video>
-    </div>
-   
-    <div id="conteudo">
-        <h3>🎉 Parabéns! Aqui está o conteúdo especial 🎉</h3>
-        <p>Agora que assistiu ao vídeo, você tem acesso a essa parte exclusiva!</p>
-        <a class="LINK-2" href="pagina de coppy 2/coppy.html">ACESSE AQUI</a>
-    </div>
+  <!-- BLOCO 1 -->
+  <header>
+    <h1>Transforme Sua Vida</h1>
+    <h2 style="color: black;">Descubra a Solução Perfeita para finalmente largar o CLT</h2>
+  </header>
+
+  <!-- BLOCO 2 -->
+  <div class="container">
+    <h2>🚨 ATENÇÃO: O GUIA DEFINITIVO PARA QUEM QUER DOMINAR O MUNDO DEV E DIGITAL EM 2025 🚀</h2>
     
-    <div class="creditos" id="creditos">
-        <h3>Copyright © 2024 DEV RUBY. Todos os direitos reservados.</h3>
+    <p>Você quer aprender <strong>programação, marketing, desenvolvimento de apps, back-end, front-end, inteligência artificial, cibersegurança e automação</strong> — TUDO isso num só lugar?</p>
+    
+    <p><strong>Então SE LIGA:</strong></p>
+    
+    <h3>🔥 25 E-BOOKS COMPLETOS E PRÁTICOS</h3>
+    <p>Com os temas mais buscados do mercado:</p>
+
+    <ul>
+      <li>HTML, CSS, JS do zero</li>
+      <li>Projetos com React, Flutter, Kotlin, Swift</li>
+      <li>APIs REST com Node.js e Express</li>
+      <li>Python para Machine Learning e Ciência de Dados</li>
+      <li>SQL, NoSQL, Firebase, MongoDB</li>
+      <li>Docker, Kubernetes, Linux, GitHub, CI/CD</li>
+      <li>Cibersegurança para Devs</li>
+      <li>15 projetos práticos passo a passo incluídos</li>
+    </ul>
+
+    <p>💡 Não é só teoria: você vai aprender construindo na prática.</p>
+    <p>📦 <strong>Tudo 100% digital, acesso imediato.</strong></p>
+    <p>📉 Cansado de cursos caros e enrolação? Aqui é direto ao ponto.</p>
+    <p>🎁 E o melhor: <strong>por um preço simbólico</strong> (por tempo limitado)</p>
+
+    <a href="Evento cliente livro e email/index.html" class="call-to-action">👉 GARANTA AGORA SUA CÓPIA</a>
+  </div>
+
+  <!-- BLOCO 3 - Testemunhos -->
+  <div class="content">
+    <p>Descubra um método comprovado para conquistar a liberdade financeira e abandonar o emprego fixo. Dê o primeiro passo rumo à sua nova jornada agora!</p>
+    <a href="../Evento cliente livro e email/index.html" class="cta-button">Quero Saber Mais!</a>
+
+    <div class="testemunhos">
+      <div class="testemunho-item">
+        <img src="../imagens/t1.jpg" alt="Print Testemunho 1">
+        <p>Veja como este cliente conseguiu resultados incríveis!</p>
+      </div>
+      <div class="testemunho-item">
+        <img src="../imagens/t2.jpg" alt="Print Testemunho 2">
+        <p>O segredo que transformou o jogo para este empreendedor.</p>
+      </div>
+      <div class="testemunho-item">
+        <img src="../imagens/t3.jpg" alt="Print Testemunho 3">
+        <p>Este é o motivo pelo qual muitos já estão aplicando nossa solução.</p>
+      </div>
     </div>
 
-    <script>
-        document.getElementById("meuVideo").addEventListener("ended", function() {
-            document.getElementById("videoContainer").style.display = "none";
-            document.getElementById("conteudo").style.display = "block";
-            document.getElementById("creditos").style.display = "block";
-        });
-    </script>
+    <a href="../Evento cliente livro e email/index.html" class="cta-button">Quero Saber Mais!</a>
+  </div>
+
+  <footer>
+    <p>Copyright © 2024 DEV RUBY. Todos os direitos reservados.</p>
+  </footer>
 
 </body>
 </html>

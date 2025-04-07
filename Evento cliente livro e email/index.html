@@ -97,6 +97,8 @@
             margin-top: 40px;
             font-size: 16px;
         }
+
+        /* Ajustes para dispositivos móveis */
         @media (max-width: 600px) {
             header {
                 font-size: 22px;
@@ -106,6 +108,55 @@
             }
             .swiper-slide p {
                 font-size: 16px;
+            }
+        }
+
+        /* Fullscreen em mobile paisagem */
+        @media (max-width: 600px) and (orientation: landscape) {
+            .carousel-container {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                margin: 0;
+                z-index: 999;
+                background: #000;
+            }
+
+            .swiper {
+                width: 100%;
+                height: 100%;
+                border-radius: 0;
+            }
+
+            .swiper-slide {
+                height: 100%;
+                justify-content: center;
+            }
+
+            .swiper-slide img {
+                max-height: 90vh;
+                width: auto;
+                height: auto;
+                object-fit: contain;
+                border: none;
+            }
+
+            .swiper-slide p {
+                font-size: 14px;
+                color: #fff;
+                margin-top: 5px;
+            }
+
+            .swiper-button-next,
+            .swiper-button-prev {
+                background: rgba(255, 255, 255, 0.3);
+                color: #fff;
+            }
+
+            .swiper-pagination {
+                bottom: 20px;
             }
         }
     </style>
@@ -125,7 +176,7 @@
 <div class="carousel-container">
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-            <!-- 10 imagens com frases motivacionais -->
+            <!-- Slides com depoimentos -->
             <div class="swiper-slide">
                 <img src="imagens/1.png" alt="Depoimento 1">
                 <p>"Este curso mudou minha vida! 💎"</p>
@@ -166,7 +217,6 @@
                 <img src="imagens/10.png" alt="Depoimento 10">
                 <p>"Aprendi com os melhores!"</p>
             </div>
-            
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
@@ -177,7 +227,12 @@
 <div class="luxury-text">SEU MOMENTO É AGORA. <br> EXCLUSIVIDADE PARA QUEM QUER VENCER!</div>
 <a href="https://pay.kiwify.com.br/ajzDyVH" class="cta-button">RESERVE SUA VAGA</a>
 
-<footer class="footer">&copy; 2025 Elite Master - Todos os direitos reservados.</footer>
+<footer class="footer">&copy; 2025 DEV RUBY - Todos os direitos reservados.</footer>
+
+<!-- Alerta para girar o celular -->
+<div id="rotate-alert" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:#000; color:#fff; z-index:1000; display:flex; align-items:center; justify-content:center; text-align:center; padding:20px;">
+    <p style="font-size: 18px;">Gire seu celular para o modo paisagem para uma experiência imersiva! 📱↔️</p>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 <script>
@@ -199,6 +254,18 @@
         },
         grabCursor: true,
     });
+
+    function checkOrientation() {
+        const alertBox = document.getElementById('rotate-alert');
+        if (window.innerHeight > window.innerWidth && window.innerWidth <= 600) {
+            alertBox.style.display = 'flex';
+        } else {
+            alertBox.style.display = 'none';
+        }
+    }
+
+    window.addEventListener('load', checkOrientation);
+    window.addEventListener('resize', checkOrientation);
 </script>
 
 </body>
