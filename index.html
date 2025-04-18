@@ -1,365 +1,120 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página Premium - Guia Dev 2025</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- Ícone Foguete (SVG) -->
-
-
+  <title>Calculadora de Gastos Mensais | DEV RUBY</title>
   <style>
-    :root {
-      --bg-dark: #121212;
-      --bg-card: #1e1e1e;
-      --orange: #ff8800;
-      --orange-hover: #e67600;
-      --text-color: #ffffff;
-      --text-muted: #aaaaaa;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: var(--bg-dark);
-      color: var(--text-color);
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d0d0d;
+      color: #f2f2f2;
+      padding: 40px;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #FFD700;
       text-align: center;
-      padding: 0 20px;
     }
-
-    header {
-      background: linear-gradient(90deg, var(--orange), #ff5500);
-      color: white;
-      padding: 40px 20px;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-    }
-
-    header h1 {
-      font-size: 32px;
-      text-transform: uppercase;
-    }
-
-    header h2 {
-      font-size: 20px;
-      font-weight: 400;
-      margin-top: 10px;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 50px auto;
-      background: var(--bg-card);
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
-    }
-
-    h2, h3 {
-      color: var(--orange);
-    }
-
-    p {
-      font-size: 18px;
-      line-height: 1.6;
-      margin-bottom: 15px;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      text-align: left;
-    }
-
-    ul li::before {
-      content: "✅ ";
-      color: var(--orange);
-    }
-
-    ul li {
-      font-size: 16px;
-      margin: 8px 0;
-    }
-
-    .call-to-action, .cta-button {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 15px 30px;
-      background: var(--orange);
-      color: #fff;
-      font-size: 20px;
-      font-weight: bold;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: background 0.3s, transform 0.3s;
-    }
-
-    .call-to-action:hover,
-    .cta-button:hover {
-      background: var(--orange-hover);
-      transform: scale(1.05);
-    }
-
-    .creditos {
-      margin-top: 50px;
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-
-    .content {
-      padding: 40px 0;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .content p {
-      font-size: 18px;
-      margin-bottom: 30px;
-      line-height: 1.6;
-      color: var(--text-color);
-    }
-
-    .testemunhos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      margin-top: 40px;
-    }
-
-    .testemunho-item {
-      background: var(--bg-card);
+    .destaque {
+      background-color: #1a1a1a;
+      border-left: 5px solid #FFD700;
       padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
-      transition: transform 0.3s;
+      margin: 30px 0;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.1);
     }
-
-    .testemunho-item:hover {
-      transform: scale(1.03);
+    .lista {
+      margin: 20px 0;
+      padding-left: 20px;
     }
-
-    .testemunho-item img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
+    .lista li {
+      margin-bottom: 10px;
     }
-
-    .testemunho-item p {
-      color: var(--text-muted);
-      font-size: 16px;
-    }
-
-    h3 {
-      font-size: 22px;
-      color: var(--orange);
-      margin: 40px 0 20px;
-    }
-
-    video {
-      width: 100%;
-      max-width: 600px;
-      margin: 20px auto;
+    .botao {
       display: block;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.08);
-    }
-
-    footer {
-      background-color: #181818;
-      color: var(--text-muted);
-      padding: 20px;
-      font-size: 14px;
-      margin-top: 50px;
-      border-top: 1px solid #333;
-    }
-
-    .copys {
-      text-align: left;
-      max-width: 800px;
-      margin: 60px auto;
-      background: var(--bg-card);
-      padding: 30px;
-      border-radius: 20px;
-    }
-
-    .copys h2 {
+      width: 100%;
+      max-width: 400px;
+      margin: 30px auto;
+      background-color: #FFD700;
+      color: #000;
       text-align: center;
-      color: var(--orange);
-      margin-bottom: 20px;
+      padding: 15px;
+      font-size: 1.2em;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
     }
-
-    .copys ul li::before {
-      content: "🔥 ";
+    .botao:hover {
+      background-color: #e6c200;
     }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 26px;
-      }
-      header h2 {
-        font-size: 18px;
-      }
-      .cta-button, .call-to-action {
-        font-size: 18px;
-        padding: 12px 25px;
-      }
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 0.9em;
+      color: #888;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Transforme Sua Vida Com a DEV RUBY</h1>
-    <h2 style="color: black;">A Solução que Pode te Tirar do CLT, Dar Orgulho pros seus Pais e te Levar a uma Vida com Mais Liberdade e Dinheiro no Bolso</h2>
-  </header>
+  <h1>🚨 O SISTEMA DEFINITIVO PARA SAIR DO CAOS FINANCEIRO EM 2025 🚨</h1>
 
-  <div class="container">
-    <h2>🚨 O GUIA COMPLETO PARA MUDAR SUA VIDA EM 2025 🚨</h2>
-    <p>Você vai aprender <strong>programação, marketing digital, criação de apps, IA, cibersegurança, automação e muito mais</strong>.</p>
-    <p>📚 +25 E-books exclusivos<br>🎥 Videoaulas completas<br>🛠️ Construção de projetos em tempo real<br>💻 Instalação e uso dos principais editores de código<br>🧠 Dicas práticas e diretas<br>🔧 +300 projetos práticos para colocar a mão na massa</p>
-    <a href="Evento cliente livro e email/index.html" class="call-to-action">QUERO ESSA TRANSFORMAÇÃO</a>
+  <div class="destaque">
+    Chega de viver afundado em boletos, cartões estourados, parcelas infinitas e compras por impulso na Shopee, Mercado Livre, Shein, Amazon, Aliexpress, Temu, Netshoes, Riachuelo, Casas Bahia, Magazine Luiza e onde mais a ansiedade te leva! 😩
+    <br><br>
+    Você precisa de um sistema real, simples e funcional para <strong>ORGANIZAR sua vida financeira</strong> antes que ela te destrua.
   </div>
-  <div class="container">
-    <h3>✅ Benefícios Exclusivos ao se Inscrever</h3>
-    <ul>
-      <li>Acesso vitalício ao curso</li>
-      <li>Suporte exclusivo</li>
-      <li>Pagamento único. Sem mensalidades.</li>
-      <li>Certificados de conclusão de 30 Horas</li>
-      <li>Bônus especiais liberados após inscrição</li>
-      <li>Opção de assistir ao curso offline e pelo celular</li>
-      <li>Grupo privado no Telegram para networking e dúvidas</li>
-      <li>Suporte técnico 24 horas por dia</li>
-      <li>Atualizações mensais de novos conteúdos e módulos</li>
-      <li>Preço especial por já ter acesso ao Legacy Master</li>
-    </ul>
-  </div>
-  
 
-  <!-- LINHA DO TEMPO / JORNADA DE TRANSFORMAÇÃO -->
-<div class="container">
-  <h2>🚀 Sua Jornada de Transformação</h2>
-  <p>Veja o que você pode conquistar com o curso em apenas 3 meses:</p>
-  <ul>
-    <li><strong>📍 Semana 1:</strong> Aprenda programação e crie seus primeiros códigos simples.</li>
-    <li><strong>📍 Semana 2 a 4:</strong> Desenvolva páginas web completas, aprenda GitHub, VS Code e comece seu portfólio.</li>
-  
-    <li><strong>📍 3º Mês:</strong> Feche seus primeiros freelas ou conquiste seu primeiro emprego remoto!</li>
+  <h2>📊 APRESENTAMOS: A CALCULADORA DE GASTOS MENSAL DEV RUBY</h2>
+  <ul class="lista">
+    <li>📥 Salve como PDF ou Excel</li>
+    <li>📱 Funciona em qualquer dispositivo (inclusive no celular)</li>
+    <li>🧠 Totalmente intuitiva, moderna e direta ao ponto</li>
   </ul>
-</div>
 
-<!-- OFERTA COM URGÊNCIA E ESCASSEZ -->
-<div class="container" style="background-color: #2a2a2a; border: 2px dashed var(--orange);">
-  <h2>⏳ Oferta Limitada</h2>
-  <p><strong>⚡ Essa oferta está disponível por tempo limitado!</strong></p>
-  <ul>
-    <li>🎁 <strong>Preço especial:</strong> por já ter acesso ao Legacy Master</li>
-    <li>💸 <strong>Pagamento único:</strong> sem mensalidades e com acesso vitalício</li>
-  
-    <li>📆 <strong>Promoção válida até:</strong> <span style="color: var(--orange); font-weight: bold;">domingo, 14 de abril</span></li>
-  </ul>
-  <a href="Evento cliente livro e email/index.html" class="cta-button">Garanta Minha Vaga Agora</a>
-</div>
-
-<!-- BÔNUS VISUAIS -->
-<div class="container">
-  <h2>🎁 Bônus Exclusivos Incluídos</h2>
-  <p>Ao se inscrever, você recebe acesso a recursos que vão turbinar ainda mais sua evolução:</p>
-  <ul>
-    <li>📱 <strong>Aulas 100% offline pelo celular</strong> — assista quando e onde quiser baixando na plataforma</li>
-    <li>📘 <strong>E-books de Marketing e Persuasão</strong> — aprenda a pensar como um profissional de sucesso</li>
-    <li>🧩 <strong>Checklist de 90 dias</strong> — para sair do CLT e começar a gerar renda online</li>
-
-    <li>🆘 <strong>Suporte 24h via e-mail e comunidade</strong> — você nunca estará sozinho nessa jornada</li>
-  </ul>
-</div>
-
-
-
-  <div class="copys">
-    <h2>🔥 Motivos para voce se inscrever na DEV RUBY</h2>
-    <ul>
-        <ul>
-            <li><strong>Você não nasceu pra bater ponto, nasceu pra deixar sua marca no mundo!</strong></li>
-            <li><strong>Chega de viver no modo automático. É hora de ACORDAR pra sua grandeza!</strong></li>
-            <li><strong>Se nada mudar, sua vida vai continuar exatamente igual. Mude agora ou se arrependa depois.</strong></li>
-            <li><strong>Enquanto você espera, outros estão conquistando o que era pra ser seu.</strong></li>
-            <li><strong>Você merece viver bem, com liberdade e fazendo o que ama de verdade!</strong></li>
-            <li><strong>Seu futuro incrível começa com uma escolha ousada. Escolha evoluir.</strong></li>
-            <li><strong>Quem estuda, cresce. Quem aplica, transforma a própria história.</strong></li>
-            <li><strong>Pare de só sobreviver… você nasceu pra VIVER em alto nível!</strong></li>
-            <li><strong>Construa uma carreira que te encha de orgulho toda vez que contar sua história.</strong></li>
-            <li><strong>A única barreira entre você e seus sonhos é a sua atitude. Quebre agora!</strong></li>
-            <li><strong>Não é sorte. É decisão. E você está a um clique de mudar tudo.</strong></li>
-            <li><strong>Liberdade não é luxo, é direito. E começa com conhecimento!</strong></li>
-            <li><strong>O mercado digital não espera. Só os corajosos conquistam seu espaço.</strong></li>
-            <li><strong>Você está a um passo de largar o CLT. Falta só ter coragem pra dar esse passo.</strong></li>
-            <li><strong>Não é mágica. É método testado. E agora está nas suas mãos.</strong></li>
-            <li><strong>Você pode aprender tudo. Só precisa do caminho certo — e ele está aqui.</strong></li>
-            <li><strong>Domine o que o mercado exige e vá além do que você imaginava ser possível.</strong></li>
-            <li><strong>Você já tem tudo o que precisa. Só falta agir com força total.</strong></li>
-            <li><strong>Seja o orgulho da sua família. Comece a construir sua nova história hoje.</strong></li>
-            <li><strong>Liberdade financeira existe, e ela começa com uma decisão.</strong></li>
-          
-            <!-- +30 copys turbinadas -->
-            <li><strong>O tempo vai passar de qualquer jeito. Use ele pra construir sua liberdade.</strong></li>
-            <li><strong>Se você não investir em você, ninguém vai fazer isso por você.</strong></li>
-            <li><strong>Renda extra não cai do céu. Mas pode nascer de um clique certo.</strong></li>
-            <li><strong>Quem domina tecnologia, domina o jogo. Hora de entrar pro time vencedor.</strong></li>
-            <li><strong>Hoje parece difícil? Amanhã você vai agradecer por ter começado agora.</strong></li>
-            <li><strong>Trabalhar de onde quiser é real. Só depende da sua escolha de hoje.</strong></li>
-            <li><strong>O digital transforma tudo — sua renda, sua rotina e sua liberdade.</strong></li>
-            <li><strong>Você não precisa de diploma. Precisa de decisão e atitude.</strong></li>
-            <li><strong>Conhecimento é o novo ouro. E você tá a um clique de virar milionário de ideias.</strong></li>
-            <li><strong>Seu sucesso não é opcional. É inevitável com o caminho certo.</strong></li>
-            <li><strong>O conforto de hoje pode ser a prisão de amanhã. Saia enquanto há tempo.</strong></li>
-            <li><strong>Você vale mais que boletos e correria. Merece paz e prosperidade.</strong></li>
-            <li><strong>Mostre pra si mesmo que você pode. Você consegue. Você nasceu pra isso.</strong></li>
-            <li><strong>Seu potencial está sufocado. Chegou a hora de libertar sua grandeza!</strong></li>
-            <li><strong>Você não é fraco. Só precisa de direção. E ela tá aqui, bem na sua frente.</strong></li>
-            <li><strong>Não tenha medo de ser incrível. O mundo precisa da sua melhor versão.</strong></li>
-            <li><strong>Você é capaz. Sempre foi. Agora é hora de provar pro mundo.</strong></li>
-            <li><strong>Todo mestre já foi iniciante. Dê o primeiro passo com coragem.</strong></li>
-            <li><strong>Não adie mais sua liberdade. Ela começa hoje, não “depois”.</strong></li>
-            <li><strong>Começar é a parte mais difícil. Mas é também a mais poderosa.</strong></li>
-            <li><strong>O mundo digital tá de braços abertos. Entre e mostre a que veio.</strong></li>
-            <li><strong>Você tem talento. Só precisava de uma oportunidade. Achou.</strong></li>
-            <li><strong>Seus sonhos estão gritando. Atenda agora ou silencie pra sempre.</strong></li>
-            <li><strong>Tá tudo pronto. Só falta você clicar e começar a virada.</strong></li>
-            <li><strong>Chega de desculpas. Agora é só ação. Bora!</strong></li>
-            <li><strong>Você é seu maior projeto. E hoje começa a sua melhor versão.</strong></li>
-            <li><strong>Em breve, você vai contar pra alguém sobre o dia em que tudo mudou.</strong></li>
-            <li><strong>Mostre pra todo mundo — e pra você — que é possível sim vencer!</strong></li>
-            <li><strong>Essa é sua chance. Não deixa escapar. Agarre com tudo!</strong></li>
-          </ul>
-          
-    </ul>
+  <h2>💡 E AÍ, O QUE VOCÊ PREFERE?</h2>
+  <div class="destaque">
+    Gastar R$ 20 em mais um mês de streamings...<br>
+    OU <strong>investir R$ 20</strong> em um sistema que vai organizar sua vida inteira e te dar liberdade financeira? 🤔
   </div>
-  <a href="Evento cliente livro e email/index.html" class="cta-button">Quero Saber Mais!</a>
-  <div class="content">
-    <p>Veja quem já está transformando a vida com o nosso material:</p>
-   
-    <div class="testemunhos">
-      <!-- 9 imagens -->
-      <div class="testemunho-item"><img src="imagens/t1.jpg" alt="Testemunho"><p>De desempregado a freelancer em 3 meses.</p></div>
-      <div class="testemunho-item"><img src="imagens/t2.jpg" alt="Testemunho"><p>Primeiro salário como dev veio em 45 dias.</p></div>
-      <div class="testemunho-item"><img src="imagens/t3.jpg" alt="Testemunho"><p>Hoje eu trabalho de casa, ganhando mais que antes.</p></div>
-      <div class="testemunho-item"><img src="imagens/t4.jpg" alt="Testemunho"><p>Minha vida mudou depois desse guia.</p></div>
-      <div class="testemunho-item"><img src="imagens/t5.jpg" alt="Testemunho"><p>Simplesmente o melhor investimento da minha vida.</p></div>
-      <div class="testemunho-item"><img src="imagens/t6.jpg" alt="Testemunho"><p>Trabalho remoto virou realidade!</p></div>
-      <div class="testemunho-item"><img src="imagens/t7.jpg" alt="Testemunho"><p>Aprendi mais em 2 meses do que em 2 anos de faculdade.</p></div>
-      <div class="testemunho-item"><img src="imagens/t8.jpg" alt="Testemunho"><p>Resultado prático e direto. Recomendo!</p></div>
-      <div class="testemunho-item"><img src="imagens/t9.jpg" alt="Testemunho"><p>Já estou fazendo renda com freelas.</p></div>
-    </div>
-    <a href="Evento cliente livro e email/index.html" class="cta-button">Quero Saber Mais!</a>
+
+  <h2>📚 BASEADO EM MAIS DE 50 LIVROS DE FINANÇAS E PSICOLOGIA ECONÔMICA</h2>
+  <p>Inspirado em sistemas usados por grandes mentes como Warren Buffett, Elon Musk, Oprah Winfrey, Steve Jobs, Bill Gates, Ray Dalio, Jeff Bezos, Mark Cuban, Sara Blakely, Tony Robbins, Robert Kiyosaki.</p>
+
+  <h2>✅ BENEFÍCIOS EXCLUSIVOS</h2>
+  <ul class="lista">
+    <li>Controle total de gastos mensais</li>
+    <li>Relatórios claros e gráficos automáticos</li>
+    <li>Categorização inteligente de despesas</li>
+    <li>Planejamento de metas financeiras</li>
+    <li>Versão offline + exportação rápida</li>
+    <li>Interface luxuosa e fácil de usar</li>
+  </ul>
+
+  <h2>🔥 SUA VIRADA FINANCEIRA COMEÇA AGORA</h2>
+  <div class="destaque">
+    Acorda! Enquanto você gasta sem ver, sua vida financeira afunda.<br>
+    Essa calculadora é o <strong>primeiro passo</strong> para sair da zona de desespero.
   </div>
+
+  <ul class="lista">
+    <li>✅ Tome o controle.</li>
+    <li>✅ Enfrente a verdade.</li>
+    <li>✅ Comece a sua reviravolta AGORA.</li>
+  </ul>
+
+  <h2>📢 QUEM JÁ USA, DIZ:</h2>
+  <ul class="lista">
+    <li>"Hoje eu sei exatamente pra onde meu dinheiro vai. Minha ansiedade sumiu."</li>
+    <li>"Comecei a usar e parei de parcelar coisas inúteis. Meu cartão agradece."</li>
+    <li>"Achei que ia ser só uma planilha, mas virou o meu mapa da liberdade."</li>
+  </ul>
+
+  <a href="#" class="botao">💸 Quero Mudar Minha Vida Financeira!</a>
 
   <footer>
-    <p>Copyright © 2024 DEV RUBY. Todos os direitos reservados.</p>
+    Conteúdo desenvolvido por <strong>DEV RUBY</strong>.<br>
+    Copyright © 2024 DEV RUBY. Todos os direitos reservados.
   </footer>
 </body>
 </html>
