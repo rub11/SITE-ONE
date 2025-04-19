@@ -1,197 +1,210 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadora de Gastos DEV RUBY</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>💸 Calculadora da Liberdade | DEV RUBY</title>
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0d0d0d;
-      color: #f5f5f5;
-      line-height: 1.6;
+      padding: 0;
+      box-sizing: border-box;
     }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0d0d0d, #1a1a1a);
+      color: #ffd700;
       padding: 40px 20px;
     }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+
     h1, h2, h3 {
-      color: #ffd700;
+      color: #ffcc00;
+      margin-bottom: 20px;
     }
-    .highlight {
-      color: #ff5733;
+
+    p {
+      margin-bottom: 20px;
+      line-height: 1.8;
+      font-size: 18px;
+      color: #f2f2f2;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 30px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+      font-size: 17px;
+      position: relative;
+      padding-left: 24px;
+    }
+
+    ul li::before {
+      content: "✅";
+      position: absolute;
+      left: 0;
+      color: #ff4500;
+    }
+
+    .cta {
+      background: #ff4500;
+      color: #fff;
+      padding: 18px 28px;
+      font-size: 20px;
       font-weight: bold;
-    }
-    .cta-button {
-      background: linear-gradient(to right, #ffd700, #ff5733);
-      color: #000;
       border: none;
-      padding: 15px 30px;
-      font-size: 1.2rem;
       border-radius: 8px;
       cursor: pointer;
-      transition: transform 0.3s ease;
-      margin: 20px 0;
+      transition: background 0.3s ease;
+      display: block;
+      margin: 40px auto;
+      text-align: center;
     }
-    .cta-button:hover {
-      transform: scale(1.05);
+
+    .cta:hover {
+      background: #cc3700;
     }
-    .benefits {
+
+    .highlight {
+      background: #222;
+      border-left: 4px solid #ffcc00;
+      padding: 16px 20px;
+      margin: 30px 0;
+      font-size: 18px;
+      color: #fffacd;
+    }
+
+    .testimonials {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
-      margin-top: 30px;
-    }
-    .benefit-card {
-      background-color: #1a1a1a;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(255, 215, 0, 0.1);
-    }
-    .depoimentos {
-      background-color: #111;
-      padding: 40px 20px;
       margin-top: 50px;
-      border-radius: 12px;
     }
-    blockquote {
-      border-left: 4px solid #ff5733;
-      padding-left: 20px;
-      margin: 20px 0;
+
+    .testimonial {
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 14px;
+      padding: 20px;
+      color: #fff;
       font-style: italic;
     }
+
     footer {
       text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #aaa;
+      margin-top: 60px;
+      font-size: 14px;
+      color: #999;
+    }
+
+    @media (max-width: 600px) {
+      .cta {
+        font-size: 18px;
+        padding: 16px 20px;
+      }
+
+      p, ul li {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>🚨 O SISTEMA DEFINITIVO PARA SAIR DO CAOS FINANCEIRO EM 2025 🚨</h1>
-    <p>Chega de viver afundado em <strong>boletos, cartões estourados</strong>, parcelas infinitas e compras por impulso na <span class="highlight">Shopee, Mercado Livre, Shein, Amazon, Aliexpress, Temu, Netshoes, Riachuelo, Casas Bahia, Magazine Luiza</span> e onde mais a ansiedade te leva! 😩</p>
-    <p>Você precisa de um sistema real, simples e funcional para <strong>organizar sua vida financeira antes que ela te destrua.</strong></p>
+    <h1>🤔 Você sente que o mês passa e você não sabe onde foi parar seu dinheiro?</h1>
 
-    <h2>📊 APRESENTAMOS: A CALCULADORA DE GASTOS MENSAL DA <span class="highlight">DEV RUBY</span></h2>
-    <p>O sistema que vai colocar <strong>ordem no seu caos</strong> e te dar <strong>controle total sobre cada centavo</strong>.</p>
+<p>💳 Já aconteceu de olhar o extrato e pensar: "Eu nem lembro de ter gastado com isso tudo..."?</p>
 
-    <ul>
-      <li>📥 Salve como <strong>PDF</strong> ou como <strong>Planilha de Excel</strong></li>
-      <li>📱 <strong>Funciona em qualquer dispositivo</strong> — inclusive no seu celular</li>
-      <li>🧠 <strong>Totalmente intuitivo, moderno e direto ao ponto</strong></li>
-    </ul>
+<p>📉 Você está cansado de viver no limite, com o cartão estourado, boletos acumulando, e a sensação constante de estar correndo atrás do prejuízo?</p>
 
-   <a href="https://pay.kiwify.com.br/pObmiYU"> <button class="cta-button">💸 Quero organizar minha vida financeira agora</button>
-   </a>
-    <h2>💡 E AÍ, O QUE VOCÊ PREFERE?</h2>
-    <p>Gastar R$ 20 em mais um mês de <span class="highlight">Netflix, Crunchyroll, Spotify, Disney+, Amazon Prime, Star+, HBO Max, Deezer ou YouTube Premium</span>...</p>
-    <p><strong>OU</strong> investir R$ 20 em um sistema que vai <strong>organizar sua vida financeira inteira</strong>, salvar seu futuro e te dar a <strong>liberdade que você tanto sonha?</strong></p>
+<p>🧠 Sua mente vive sobrecarregada tentando lembrar o que ainda falta pagar... e quando você tenta organizar, se sente perdido?</p>
 
-    <h3>📚 Baseado em +50 livros de Finanças e Psicologia Econômica</h3>
-    <p>🧠 Inspirado em métodos usados por:</p>
-    <p><em>Warren Buffett, Elon Musk, Oprah Winfrey, Steve Jobs, Bill Gates, Ray Dalio, Jeff Bezos, Mark Cuban, Sara Blakely, Tony Robbins, Robert Kiyosaki</em></p>
+<p>🛒 Já tentou controlar os gastos em caderninhos, planilhas chatas ou apps confusos — e no fim desistiu porque nada funcionava de verdade?</p>
 
-    <h2>💰 Eles mudaram suas vidas com métodos.<br>Você também pode.</h2>
+<p><strong>Se você respondeu "sim" para pelo menos UMA dessas perguntas...<br>Você está no lugar certo. E isso aqui vai mudar tudo.</strong></p>
 
+<div class="highlight">
+  🎯 Você está prestes a conhecer o sistema mais prático e inteligente para organizar suas finanças mensais de forma definitiva — mesmo que você odeie números.
+</div>
 
+<h2>📊 APRESENTAMOS: A CALCULADORA DE GASTOS MENSAL DEV RUBY</h2>
 
-    <section class="testimonials">
-      <h2>✨ Veja o que estão dizendo sobre a Calculadora DEV RUBY</h2>
-      <div class="testimonial-grid">
-        <div class="testimonial-slot"><img src="print1.jpg" alt="Depoimento 1"></div>
-        <div class="testimonial-slot"><img src="print2.jpg" alt="Depoimento 2"></div>
-        <div class="testimonial-slot"><img src="print3.jpg" alt="Depoimento 3"></div>
-        <div class="testimonial-slot"><img src="print4.jpg" alt="Depoimento 4"></div>
-        <div class="testimonial-slot"><img src="print5.jpg" alt="Depoimento 5"></div>
-        <div class="testimonial-slot"><img src="print6.jpg" alt="Depoimento 6"></div>
-        <div class="testimonial-slot"><img src="print7.jpg" alt="Depoimento 7"></div>
-        <div class="testimonial-slot"><img src="print8.jpg" alt="Depoimento 8"></div>
-        <div class="testimonial-slot"><img src="print9.jpg" alt="Depoimento 9"></div>
-      </div>
-    </section>
-    
-    <style>
-    .testimonials {
-      padding: 60px 20px;
-      background: #111;
-      color: #ffd700;
-      text-align: center;
-    }
-    .testimonials h2 {
-      font-size: 2em;
-      margin-bottom: 40px;
-    }
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-    .testimonial-slot {
-      background: #1c1c1c;
-      padding: 10px;
-      border: 1px solid #444;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
-    }
-    .testimonial-slot img {
-      width: 100%;
-      border-radius: 10px;
-      object-fit: cover;
-    }
-    </style>
-    
+  
 
+    <p><strong>🚨 O SISTEMA DEFINITIVO PARA SAIR DO CAOS FINANCEIRO EM 2025 🚨</strong></p>
 
+    <p>Chega de ver seu salário evaporar em boletos, cartões estourados, parcelas sem fim e compras impulsivas!</p>
 
-    <div class="benefits">
-      <div class="benefit-card">
-        ✅ Controle total de gastos mensais
-      </div>
-      <div class="benefit-card">
-        ✅ Relatórios claros e gráficos automáticos
-      </div>
-      <div class="benefit-card">
-        ✅ Categorização inteligente de despesas
-      </div>
-      <div class="benefit-card">
-        ✅ Planejamento de metas financeiras
-      </div>
-      <div class="benefit-card">
-        ✅ Versão offline + exportação rápida
-      </div>
-      <div class="benefit-card">
-        ✅ Interface luxuosa e fácil de usar
-      </div>
+    <div class="highlight">
+      Você precisa de um sistema real, simples e funcional para organizar sua vida financeira antes que ela te engula de vez.
     </div>
 
-    <a href="https://pay.kiwify.com.br/pObmiYU"><button class="cta-button">🚀 Quero dar o primeiro passo</button></a>
+    <h2>📊 APRESENTAMOS: A CALCULADORA DE GASTOS MENSAL DEV RUBY</h2>
+    <p>Não é só uma planilha. É um método. É uma revolução silenciosa. É o que vai te dar o que ninguém te deu: controle, clareza e liberdade.</p>
 
-    <h2>🔥 SUA VIRADA FINANCEIRA COMEÇA AGORA</h2>
-    <p>Acorda! Enquanto você gasta sem ver, sua vida financeira afunda.</p>
-    <p>Essa calculadora é o <strong>primeiro passo para sair da zona de desespero</strong>.</p>
+    <ul>
+      <li>Salve como PDF ou Excel com 1 clique</li>
+      <li>Funciona perfeitamente no celular, tablet e computador</li>
+      <li>Interface intuitiva, visual luxuoso e super rápida</li>
+      <li>Totalmente offline – segurança máxima dos seus dados</li>
+    </ul>
+
+    <h2>💥 A DECISÃO É SUA</h2>
+    <p>Mais um mês pagando R$ 20 por streaming que você nem vê?</p>
+    <p>Ou investir R$ 20 num sistema que pode salvar sua vida financeira, te dar paz e abrir caminho para seus sonhos?</p>
+
+    <h3>💡 Baseado em mais de 50 livros de finanças e psicologia econômica</h3>
+    <p>Inspirado em práticas de mentes lendárias  que dominaram o dinheiro e construíram liberdade.</p>
+
+    <h2>✨ O QUE VOCÊ GANHA?</h2>
+    <ul>
+      <li>Controle total de gastos mensais</li>
+      <li>Gráficos visuais automáticos que mostram a real situação</li>
+      <li>Categorização inteligente de despesas</li>
+      <li>Planejamento de metas e objetivos financeiros</li>
+      <li>Sistema moderno e direto ao ponto</li>
+    </ul>
+
+    <div class="highlight">
+      Essa calculadora é o seu primeiro passo para sair da zona de desespero. Simples. Direta. Poderosa.
+    </div>
 
     <ul>
       <li>✅ Tome o controle.</li>
       <li>✅ Enfrente a verdade.</li>
-      <li>✅ Comece a sua reviravolta <span class="highlight">AGORA</span>.</li>
+      <li>✅ Comece sua virada agora.</li>
     </ul>
 
-    <div class="depoimentos">
-      <h2>📢 QUEM JÁ USA, DIZ:</h2>
-      <blockquote>"Hoje eu sei exatamente pra onde meu dinheiro vai. Minha ansiedade sumiu."</blockquote>
-      <blockquote>"Comecei a usar e parei de parcelar coisas inúteis. Meu cartão agradece."</blockquote>
-      <blockquote>"Achei que ia ser só uma planilha, mas virou o meu mapa da liberdade."</blockquote>
+    <button class="cta">💸 QUERO MINHA CALCULADORA AGORA</button>
+
+    <h2>📢 O QUE QUEM USA ESTÁ DIZENDO</h2>
+
+    <div class="testimonials">
+      <div class="testimonial">"Hoje eu sei exatamente pra onde meu dinheiro vai. Minha ansiedade sumiu."</div>
+      <div class="testimonial">"Comecei a usar e parei de parcelar coisas inúteis. Meu cartão agradece."</div>
+      <div class="testimonial">"Achei que ia ser só uma planilha, mas virou o meu mapa da liberdade."</div>
+      <div class="testimonial">"Tô economizando mais do que imaginei. Só com essa ferramenta."</div>
+      <div class="testimonial">"Minha relação com dinheiro mudou depois da calculadora DEV RUBY."</div>
+      <div class="testimonial">"É como se fosse meu coach financeiro pessoal. Intuitiva e poderosa."</div>
+      <div class="testimonial">"Nunca mais perdi o controle das faturas e metas mensais."</div>
+      <div class="testimonial">"Facilitou até na hora de conversar com meu parceiro sobre grana."</div>
+      <div class="testimonial">"Melhor R$ 19,90 que já investi. Recomendo pra todo mundo!"</div>
     </div>
-<a href="https://pay.kiwify.com.br/pObmiYU">
-  <button class="cta-button">✨ Eu quero essa calculadora</button></a>
+
+    <button class="cta">🔐 GARANTIR AGORA POR R$ 19,90</button>
 
     <footer>
-      Conteúdo desenvolvido por <strong>DEV RUBY</strong>.<br>
-      Copyright © 2024 DEV RUBY. Todos os direitos reservados.
+      <p>Conteúdo desenvolvido por <strong>DEV RUBY</strong>.</p>
+      <p>Copyright © 2024 DEV RUBY. Todos os direitos reservados.</p>
     </footer>
   </div>
 </body>
