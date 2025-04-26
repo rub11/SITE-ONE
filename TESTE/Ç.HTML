@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>💸 Calculadora da Liberdade | DEV RUBY</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0d0d0d, #1a1a1a);
+      color: #ffd700;
+      padding: 50px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1, h2, h3 {
+      color: #ffd700;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    p {
+      margin-bottom: 20px;
+      line-height: 1.8;
+      font-size: 18px;
+      color: #f2f2f2;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 30px;
+    }
+
+    ul li {
+      margin-bottom: 15px;
+      font-size: 18px;
+      position: relative;
+      padding-left: 24px;
+    }
+
+    ul li::before {
+      content: "✅";
+      position: absolute;
+      left: 0;
+      color: #ffcc00;
+      font-size: 20px;
+    }
+
+    .cta {
+      background: #ff4500;
+      color: #fff;
+      padding: 18px 30px;
+      font-size: 22px;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+      display: block;
+      margin: 40px auto;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .cta:hover {
+      background: #cc3700;
+      transform: scale(1.05);
+    }
+
+    .highlight {
+      background: #222;
+      border-left: 6px solid #ffcc00;
+      padding: 20px 25px;
+      margin: 30px 0;
+      font-size: 20px;
+      color: #fffacd;
+      font-style: italic;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 50px;
+    }
+
+    .testimonial {
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 14px;
+      padding: 20px;
+      color: #fff;
+      font-style: italic;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s ease;
+    }
+
+    .testimonial:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 14px;
+      color: #999;
+    }
+
+    /* Estilo para as imagens e títulos */
+    .image-slot-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .image-slot {
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      transition: transform 0.2s ease;
+    }
+
+    .image-slot:hover {
+      transform: scale(1.05);
+    }
+
+    .image-slot img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .image-slot h3 {
+      color: #ffd700;
+      font-size: 24px;
+      margin-bottom: 10px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    @media (max-width: 600px) {
+      .cta {
+        font-size: 18px;
+        padding: 16px 20px;
+      }
+
+      p, ul li {
+        font-size: 16px;
+      }
+
+      .image-slot h3 {
+        font-size: 20px;
+      }
+
+      .image-slot-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🤔 Você sente que o mês passa e você não sabe onde foi parar seu dinheiro?</h1>
+
+    <p>💳 Já aconteceu de olhar o extrato e pensar: "Eu nem lembro de ter gastado com isso tudo..."?</p>
+
+    <p>📉 Você está cansado de viver no limite, com o cartão estourado, boletos acumulando, e a sensação constante de estar correndo atrás do prejuízo?</p>
+
+    <p>🧠 Sua mente vive sobrecarregada tentando lembrar o que ainda falta pagar... e quando você tenta organizar, se sente perdido?</p>
+
+    <p>🛒 Já tentou controlar os gastos em caderninhos, planilhas chatas ou apps confusos — e no fim desistiu porque nada funcionava de verdade?</p>
+
+    <p><strong>Se você respondeu "sim" para pelo menos UMA dessas perguntas...<br>Você está no lugar certo. E isso aqui vai mudar tudo.</strong></p>
+
+    <div class="highlight">
+      🎯 Você está prestes a conhecer o sistema mais prático e inteligente para organizar suas finanças mensais de forma definitiva — mesmo que você odeie números.
+    </div>
+
+    <h2>📊 APRESENTAMOS: A CALCULADORA DE GASTOS MENSAL DEV RUBY</h2>
+
+    <p><strong>🚨 O SISTEMA DEFINITIVO PARA SAIR DO CAOS FINANCEIRO EM 2025 🚨</strong></p>
+
+    <p>Chega de ver seu salário evaporar em boletos, cartões estourados, parcelas sem fim e compras impulsivas!</p>
+
+    <div class="highlight">
+      Você precisa de um sistema real, simples e funcional para organizar sua vida financeira antes que ela te engula de vez.
+    </div>
+
+    <h2>📊 APRESENTAMOS: A CALCULADORA DE GASTOS MENSAL DEV RUBY</h2>
+    <p>Não é só uma planilha. É um método. É uma revolução silenciosa. É o que vai te dar o que ninguém te deu: controle, clareza e liberdade.</p>
+
+    <ul>
+      <li>Salve como PDF ou Excel com 1 clique</li>
+      <li>Funciona perfeitamente no celular, tablet e computador</li>
+      <li>Interface intuitiva, visual luxuoso e super rápida</li>
+      <li>Totalmente offline – segurança máxima dos seus dados</li>
+    </ul>
+
+    <!-- Seção de imagens com título em 2x2 -->
+    <div class="image-slot-container">
+      <div class="image-slot">
+        <h3>INTERFACE SIMPLES E FÁCIL DE USAR</h3>
+        <img src="../imagens/primeira foto.png" alt="Descrição da imagem 1">
+      </div>
+      <div class="image-slot">
+        <h3>FÁCIL DE ADICIONAR SEUS GASTOS E O VALOR</h3>
+        <img src="../imagens/segunda foto.png" alt="Descrição da imagem 2">
+      </div>
+      <div class="image-slot">
+        <h3>SALVE O ARQUIVO EM PDF COM GRÁFICOS E A TABELA TODOS ARRUMADOS</h3>
+        <img src="../imagens/Captura de tela 2025-04-23 044852.png" alt="Descrição da imagem 3">
+      </div>
+      <div class="image-slot">
+        <h3>E PRONTO, TUDO ESTÁ SALVO NESTE ARQUIVO PDF</h3>
+        <img src="../imagens/image.png" alt="Descrição da imagem 3">
+      </div>
+    </div>
+
+    <h2>💥 A DECISÃO É SUA</h2>
+    <p>Mais um mês pagando R$ 20 por streaming que você nem vê?</p>
+    <p>Ou investir R$ 20 num sistema que pode salvar sua vida financeira, te dar paz e abrir caminho para seus sonhos?</p>
+
+    <h3>💡 Baseado em mais de 50 livros de finanças e psicologia econômica</h3>
+    <p>Inspirado em práticas de mentes lendárias que dominaram o dinheiro e construíram liberdade.</p>
+
+    <h2>✨ O QUE VOCÊ GANHA?</h2>
+    <ul>
+      <li>Controle total de gastos mensais</li>
+      <li>Gráficos visuais automáticos que mostram a real situação</li>
+      <li>Categorização inteligente de despesas</li>
+      <li>Planejamento de metas e objetivos financeiros</li>
+      <li>Sistema moderno e direto ao ponto</li>
+    </ul>
+
+    <div class="highlight">
+      Essa calculadora é o seu primeiro passo para sair da zona de desespero. Simples. Direta. Poderosa.
+    </div>
+
+    <ul>
+      <li>✅ Tome o controle.</li>
+      <li>✅ Enfrente a verdade.</li>
+      <li>✅ Comece sua virada agora.</li>
+    </ul>
+    <a style="text-decoration: none;" href="https://devruby.com/cursos"><button class="cta">💰 QUERO TER O CONTROLE AGORA</button></a>
+
+    <footer>
+      <p>© 2025 DEV RUBY - Todos os direitos reservados.</p>
+    </footer>
+  </div>
+</body>
+</html>
