@@ -15,21 +15,17 @@
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(to right, #0d0d0d, #1a1a1a);
       color: #ffd700;
-      padding: 50px 20px;
+      padding: 40px 20px;
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1000px;
       margin: auto;
-      padding: 20px;
     }
 
     h1, h2, h3 {
-      color: #ffd700;
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
+      color: #ffcc00;
       margin-bottom: 20px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     }
 
     p {
@@ -46,8 +42,8 @@
     }
 
     ul li {
-      margin-bottom: 15px;
-      font-size: 18px;
+      margin-bottom: 10px;
+      font-size: 17px;
       position: relative;
       padding-left: 24px;
     }
@@ -56,40 +52,35 @@
       content: "✅";
       position: absolute;
       left: 0;
-      color: #ffcc00;
-      font-size: 20px;
+      color: #ff4500;
     }
 
     .cta {
       background: #ff4500;
       color: #fff;
-      padding: 18px 30px;
-      font-size: 22px;
+      padding: 18px 28px;
+      font-size: 20px;
       font-weight: bold;
       border: none;
-      border-radius: 12px;
+      border-radius: 8px;
       cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
+      transition: background 0.3s ease;
       display: block;
       margin: 40px auto;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
 
     .cta:hover {
       background: #cc3700;
-      transform: scale(1.05);
     }
 
     .highlight {
       background: #222;
-      border-left: 6px solid #ffcc00;
-      padding: 20px 25px;
+      border-left: 4px solid #ffcc00;
+      padding: 16px 20px;
       margin: 30px 0;
-      font-size: 20px;
+      font-size: 18px;
       color: #fffacd;
-      font-style: italic;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
     .testimonials {
@@ -106,12 +97,6 @@
       padding: 20px;
       color: #fff;
       font-style: italic;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-      transition: transform 0.2s ease;
-    }
-
-    .testimonial:hover {
-      transform: scale(1.05);
     }
 
     footer {
@@ -122,22 +107,9 @@
     }
 
     /* Estilo para as imagens e títulos */
-    .image-slot-container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-      margin-bottom: 40px;
-    }
-
     .image-slot {
+      margin-bottom: 40px;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      border-radius: 12px;
-      transition: transform 0.2s ease;
-    }
-
-    .image-slot:hover {
-      transform: scale(1.05);
     }
 
     .image-slot img {
@@ -149,9 +121,8 @@
 
     .image-slot h3 {
       color: #ffd700;
-      font-size: 24px;
+      font-size: 22px;
       margin-bottom: 10px;
-      font-family: 'Playfair Display', serif;
     }
 
     @media (max-width: 600px) {
@@ -162,14 +133,6 @@
 
       p, ul li {
         font-size: 16px;
-      }
-
-      .image-slot h3 {
-        font-size: 20px;
-      }
-
-      .image-slot-container {
-        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -212,32 +175,34 @@
       <li>Totalmente offline – segurança máxima dos seus dados</li>
     </ul>
 
-    <!-- Seção de imagens com título em 2x2 -->
-    <div class="image-slot-container">
-      <div class="image-slot">
-        <h3>INTERFACE SIMPLES E FÁCIL DE USAR</h3>
-        <img src="../imagens/primeira foto.png" alt="Descrição da imagem 1">
-      </div>
-      <div class="image-slot">
-        <h3>FÁCIL DE ADICIONAR SEUS GASTOS E O VALOR</h3>
-        <img src="../imagens/segunda foto.png" alt="Descrição da imagem 2">
-      </div>
-      <div class="image-slot">
-        <h3>SALVE O ARQUIVO EM PDF COM GRÁFICOS E A TABELA TODOS ARRUMADOS</h3>
-        <img src="../imagens/Captura de tela 2025-04-23 044852.png" alt="Descrição da imagem 3">
-      </div>
-      <div class="image-slot">
-        <h3>E PRONTO, TUDO ESTÁ SALVO NESTE ARQUIVO PDF</h3>
-        <img src="../imagens/image.png" alt="Descrição da imagem 3">
-      </div>
+    <!-- Seção de imagens com títulos -->
+    <div class="image-slot">
+      <h3>INTERFACE SIMPLES E FÁCIL DE USAR</h3>
+      <img src="imagens/primeira foto.png" alt="Interface simples e fácil de usar">
     </div>
+    
+    <div class="image-slot">
+      <h3>FÁCIL DE ADICIONAR SEUS GASTOS E VALORES</h3>
+      <img src="imagens/segunda foto.png" alt="Adicionar gastos de forma fácil">
+    </div>
+    
+    <div class="image-slot">
+      <h3>SALVE O ARQUIVO EM PDF COM GRÁFICOS E TABELAS ARRUMADOS</h3>
+      <img src="imagens/Captura de tela 2025-04-23 044852.png" alt="Salvar arquivos organizados em PDF">
+    </div>
+    
+    <div class="image-slot">
+      <h3>PRONTO! TUDO SALVO NO PDF ORGANIZADO</h3>
+      <img src="imagens/image.png" alt="PDF finalizado e organizado">
+    </div>
+    
 
     <h2>💥 A DECISÃO É SUA</h2>
     <p>Mais um mês pagando R$ 20 por streaming que você nem vê?</p>
     <p>Ou investir R$ 20 num sistema que pode salvar sua vida financeira, te dar paz e abrir caminho para seus sonhos?</p>
 
     <h3>💡 Baseado em mais de 50 livros de finanças e psicologia econômica</h3>
-    <p>Inspirado em práticas de mentes lendárias que dominaram o dinheiro e construíram liberdade.</p>
+    <p>Inspirado em práticas de mentes lendárias  que dominaram o dinheiro e construíram liberdade.</p>
 
     <h2>✨ O QUE VOCÊ GANHA?</h2>
     <ul>
@@ -257,10 +222,29 @@
       <li>✅ Enfrente a verdade.</li>
       <li>✅ Comece sua virada agora.</li>
     </ul>
-    <a style="text-decoration: none;" href="https://pay.kiwify.com.br/pObmiYU"><button class="cta">💰 QUERO TER O CONTROLE AGORA</button></a>
+    <a style="text-decoration: none;" href="https://pay.kiwify.com.br/pObmiYU">
+      <button class="cta">💸 QUERO CONTROLAR MINHA VIDA FINANCEIRA</button>
+    </a>
+    
+
+    <h2>📢 O QUE QUEM USA ESTÁ DIZENDO</h2>
+
+    <div class="testimonials">
+      <div class="testimonial">"Hoje eu sei exatamente pra onde meu dinheiro vai. Minha ansiedade sumiu."</div>
+      <div class="testimonial">"Comecei a usar e parei de parcelar coisas inúteis. Meu cartão agradece."</div>
+      <div class="testimonial">"Achei que ia ser só uma planilha, mas virou o meu mapa da liberdade."</div>
+      <div class="testimonial">"Tô economizando mais do que imaginei. Só com essa ferramenta."</div>
+      <div class="testimonial">"Minha relação com dinheiro mudou depois da calculadora DEV RUBY."</div>
+      <div class="testimonial">"É como se fosse meu coach financeiro pessoal. Intuitiva e poderosa."</div>
+      <div class="testimonial">"Nunca mais perdi o controle das faturas e metas mensais."</div>
+      <div class="testimonial">"Facilitou até na hora de conversar com meu parceiro sobre grana."</div>
+      <div class="testimonial">"Melhor R$ 19,90 que já investi. Recomendo pra todo mundo!"</div>
+    </div>
+    <a style="text-decoration: none;" href="https://pay.kiwify.com.br/pObmiYU"> <button class="cta">🔐a GARANTIR AGORA POR R$ 19,90</button></a>
 
     <footer>
-      <p>© 2025 DEV RUBY - Todos os direitos reservados.</p>
+      <p>Conteúdo desenvolvido por <strong>DEV RUBY</strong>.</p>
+      <p>Copyright © 2024 DEV RUBY. Todos os direitos reservados.</p>
     </footer>
   </div>
 </body>
